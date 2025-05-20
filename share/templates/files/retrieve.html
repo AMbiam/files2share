@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hello World Get filesssss. {{ today }}</h1>
+    
+    {% if file %}
+        <p>Title: {{ file.title }}</p>
+        <p>filename: {{ file.filename }}</p>
+        <p>File: {{ file.filename }}</p>
+    {% endif %}
+        
+    <form method="POST" enctype="multipart/form-data" d> {% csrf_token %}
+        {{ form }}
+
+
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+              </div>
+              <div class="col-sm">
+                <a href="{% url 'share.files' %}" class="btn btn-secondary w-100">Cancel</a>
+              </div>
+            </div>
+          </div>
+        
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,8 @@
+db.sqlite3
+__init__.py
+.DS_Store
+.pytest_cache
+uploads/*
+public/*
+*/migrations/*
+config/settings/*.py

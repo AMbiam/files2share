@@ -1,0 +1,22 @@
+
+.card-photo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  
+    object-fit: cover;
+    object-position: center right;
+}
+
+.stylized-border{
+    border-radius: 0% 10% 0% 10%;
+}
+
+
+.font-color-light{
+    color: #fbfbfb;
+}
+
+.text-align-right{
+    text-align: right;
+}

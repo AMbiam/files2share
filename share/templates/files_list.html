@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Files</h1>
+    <div class="row row-cols3 g-2">
+        {% for file in files %}
+            <div class="col ">
+                
+                <div class="p-3 border stylized-border"><a href="{% url 'file.detail' pk=file.id %}" class="text-dark text-decoration-none">
+                    <div>
+                        <img class="card-photo" src="{{ file.get_FileIcon }}"/>
+                    </div>
+                    <h3>{{ file.title  | truncatechars:20 }}</h3></a>
+                    <p class="text-left">{{ file.filename | truncatechars:20 }}</p>
+                    <p>Shared: {{ file.shares }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+        
+{% endblock %}

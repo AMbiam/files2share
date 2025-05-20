@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ file.title }}</h1>
+    <h1>{{ file.filename }}</h1>
+    <h1>{{ file.get_FilePath }}</h1>
+    <h1>Owner: {{ file.user }}</h1>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <a href="{% url 'file.update' pk=file.id  %}" class="btn btn-primary w-100">Edit</a>
+          </div>
+          <div class="col-sm">
+            <a href="{% url 'file.update' pk=file.id  %}" class="btn btn-primary w-100">Share</a>
+          </div>
+          <div class="col-sm">
+            <a href="{% url 'file.update' pk=file.id  %}" class="btn btn-danger w-100">Delete</a>
+          </div>
+        </div>
+      </div>
+        
+{% endblock %}

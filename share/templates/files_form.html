@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+    <div class="alert alert-danger my-5">
+        {{ form.errors.title.as_text }}
+    </div>
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data" d> {% csrf_token %}
+    {{ form }}
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </div>
+          <div class="col-sm">
+            <a href="{% url 'share.files' %}" class="btn btn-secondary w-100">Cancel</a>
+          </div>
+        </div>
+      </div>
+    
+</form>
+
+{% endblock %}
