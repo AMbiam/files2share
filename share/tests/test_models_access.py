@@ -17,6 +17,14 @@ def created_user():
 def access_credentials():
     return {'u' : 'randomuser', 'p' : 'testing'}
 
+@pytest.fixture
+def created_file(created_user):
+    return File(user=created_user, filename='made/up/dir.txt', title='mock')
+
+@pytest.fixture
+def created_access(created_file):
+    return Access(fileobj=created_file, filecode='xxx', accesscode='xxx', attempts=3, attempt_count=0)
+    
 
 #Testing File creation
 @pytest.mark.django_db
@@ -43,5 +51,10 @@ def test_create_file_access_then_query(created_user, access_credentials):
     with pytest.raises(IntegrityError) as exception_info:
         access2 = AccessFactory(fileobj=fileobj, filecode=access_credentials['u'], accesscode=access_credentials['p']) #Should throw a constraint exception
 
-
+#After all downloads have been exhausted, No file path should be returned.
+@pytest.mark.django_db
+def test_file_download_limit(created_access):
+    assert True == created_access.attemptAvailable()
+    created_access.attempt_count = 3
+    assert False == created_access.attemptAvailable()
 

@@ -1,31 +1,38 @@
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
   
-    <div class="container-fluid bg-dark">
+    <div class="container-fluid fill-color-green">
       <div class="row">
 
         <div class="col-3">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="font-style-impact-title font-color-dark" href="#">Navbar</a>
         </div>
 
 
         <div class="col-8">
           <div class="container">
             <div class="row">
-              <div class="col-sm">
-                <a href="/" class="btn btn-outline-light">Home</a>
+
+              <div class="col-sm div-container">
+                <div class="bottom-child-container"><a href="/" class="btn btn-outline-light">Home</a></div>
               </div>
-              <div class="col-sm">
-                <a href="{% url 'file.retrieve' %}" class="btn btn-outline-light">Retrieve Files</a>
+
+              <div class="col-sm div-container">
+                <div class="bottom-child-container"><a href="{% url 'file.retrieve' %}" class="btn btn-outline-light">Retrieve Files</a></div>
               </div>
       
               {% if user.is_authenticated %}
-                <div class="col-sm">
-                  <a href="{% url 'share.files' %}" class="btn btn-outline-light">Files</a>
+                <div class="col-sm div-container">
+                  <div class="bottom-child-container"><a href="{% url 'share.files' %}" class="btn btn-outline-light">Files</a></div>
                 </div>
-                <div class="col-md">
-                  <i class="bi bi-file-earmark-person" style="color: #fff;font-size: 40pt;"></i>
-                  <p class="fw-light font-color-light">Logged in as {{ user.username }}</p>
+
+                <div class="col-md div-container">
+                  <div class="">
+                    <i class="bi bi-file-earmark-person" style="color: #fff;font-size: 40pt;"></i>
+                    <p class="fw-light font-color-light">Logged in as {{ user.username }}</p>
+                  </div>
                 </div>
+
+                
               {% endif %}
             </div>
           </div>
@@ -35,12 +42,14 @@
 
         <div class="col-1">
           {% if user.is_authenticated %}
-            <div class="col-sm">
+            <div class="col-sm div-container">
+              <div class="">
               <form method="POST" class="d-inline" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-outline-light">Logout</button>
                 
               </form>
+            </div>
             </div>
           {% else %}
             <div class="col-sm">

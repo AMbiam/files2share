@@ -17,6 +17,34 @@
     color: #fbfbfb;
 }
 
+.font-color-dark{
+    color: #131313;
+}
+
 .text-align-right{
     text-align: right;
+}
+
+.fill-color-green{
+    background-color: #AFE1AF;
+}
+
+
+
+.font-style-impact-title{
+    font-size: 32pt;
+    font-family: Monaco, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    margin: 3vh;
+    font-style: none;
+    text-decoration: none;
+}
+
+.div-container{
+    position: relative;
+}
+
+.div-container .bottom-child-container{
+    position:absolute;
+    bottom: 0;
 }
