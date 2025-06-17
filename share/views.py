@@ -19,7 +19,8 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 from django.views.generic import CreateView, DetailView, ListView, UpdateView, FormView
 
-from .models import *
+from .models.file import File
+from .models.access import Access
 #from .forms import FileForm
 
 #Don'tneed to reference the .py files to access the classes

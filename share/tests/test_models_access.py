@@ -3,7 +3,8 @@ import pytest
 
 from django.contrib.auth.models import User
 from django.db.utils import IntegrityError
-from share.models import File, Access
+from share.models.file import File
+from share.models.access import Access
 
 from share.tests.factories import UserFactory, FileFactory, AccessFactory
 

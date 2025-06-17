@@ -4,7 +4,9 @@ from factory import fuzzy as textgen #Generates text
 from django.contrib.auth.models import User #import user model
 from django.contrib.auth.hashers import make_password #Make password hashes, instead of saving as raw string.
 
-from share.models import File, Access
+from share.models.file import File
+from share.models.access import Access
+
 
 '''
 When creating factories and sub factories,

@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-from share.models import File
+from share.models.file import File
 
 class FileForm(forms.ModelForm):
     class Meta:
